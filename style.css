@@ -1,18 +1,28 @@
 body{
     text-align: center;
+    background-color: #e0efde;
 }
 
 h1{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Playfair Display', serif;
 }
 
 .square{
     width: 100px;
     height: 100px;
-    background-color: beige;
+    background-color: #b3f2dd;
     border: 1px solid gray;
     display: inline-block;
+    transition: background-color 0.3s ease;
 }
+
+.square:hover {
+    cursor: pointer;
+  }
+
+.square.clicked {
+    background-color: #0097ad;
+  }
 
 .o{
     position: relative;
@@ -43,3 +53,29 @@ h1{
     left: 0;
     right: 0;
 }
+
+.reload-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    font-family: 'Raleway', sans-serif;
+
+  }
+  
+  .reload-button:hover {
+    background-color: #3e8e41;
+    transform: translateY(-2px);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5);
+  }
+  
+

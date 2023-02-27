@@ -18,7 +18,7 @@ function handleClick(event) {
 
         setTimeout(() => {
             alert(" O Jogo Acabou - O Vencedor foi " + playerTime);
-        }, 10);
+        }, 500);
 
     };
     updateSquare(postion);
@@ -40,6 +40,7 @@ function updateSquares() {
 
         if (symbol != '') {
             square.innerHTML = `<div class='${symbol}'></div>`
+
         }
     })
 
@@ -50,3 +51,21 @@ let reloadButton = document.getElementById('reload-button');
 reloadButton.addEventListener('click', function() {
     location.reload();
 });
+
+function handleClick(event) {
+    let square = event.target;
+    let postion = square.id;
+    if (handleMove(postion)) {
+      setTimeout(() => {
+        alert(" O Jogo Acabou - O Vencedor foi " + playerTime);
+      }, 10);
+    };
+    updateSquare(postion);
+    square.classList.add("clicked"); // adiciona a classe clicked ao elemento HTML da célula
+  }
+  
+  let squares = document.querySelectorAll(".square");
+  squares.forEach((square) => {
+    square.addEventListener("click", handleClick);
+  });
+  
